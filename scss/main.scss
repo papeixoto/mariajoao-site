@@ -1,0 +1,154 @@
+@import "variables";
+
+//reset
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $light-background;
+  font-family: $font-stack;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Utility
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+%btn-shared {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 22px;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn {
+  &-dark {
+    @extend %btn-shared;
+    background: $primary-color;
+    color: #fff;
+
+    &:hover {
+      transition: all 0.35s ease 0s;
+      background: $primary-color-dark;
+    }
+  }
+
+  &-text {
+    @extend %btn-shared;
+    color: $primary-color;
+
+    &:hover {
+      transition: all 0.35s ease 0s;
+      color: $primary-color-dark;
+    }
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.text-light-color {
+  color: $light-grey-text;
+}
+
+.company-logo {
+  max-width: 120px;
+  max-height: 64px;
+  width: auto;
+  height: auto;
+}
+
+// navbar
+nav {
+  height: 50px;
+  background: #fff;
+  position: sticky;
+  top: 0px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .nav-logo-container {
+      display: flex;
+      align-items: baseline;
+
+      h3 {
+        padding-right: 1rem;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+// header
+header {
+  height: calc(100vh - 50px);
+
+  .container {
+    display: flex;
+
+    .intro-text-container {
+      margin-top: 200px;
+      padding-right: 2rem;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        margin-top: 30px;
+        color: $dark-grey-text;
+      }
+
+      .buttons-container {
+        margin-top: 20px;
+      }
+    }
+
+    .intro-img > img {
+      width: 400px;
+      height: auto;
+    }
+  }
+
+  .logo-container {
+    margin-top: 75px;
+    & > * {
+      margin: 0 1rem;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+      transition: all 0.35s ease 0s;
+
+      &:hover {
+        -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(0%);
+      }
+    }
+  }
+}

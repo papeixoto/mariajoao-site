@@ -1,0 +1,23 @@
+{
+  "name": "mariajoao-site",
+  "version": "1.0.0",
+  "description": "Website for Maria João",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/papeixoto/mariajoao-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/papeixoto/mariajoao-site/issues"
+  },
+  "homepage": "https://github.com/papeixoto/mariajoao-site#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
