@@ -12,6 +12,7 @@ body {
   background: $light-background;
   font-family: $font-stack;
   line-height: 1.5;
+  font-weight: 500;
 }
 
 h3 {
@@ -20,6 +21,11 @@ h3 {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+ul li {
+  list-style: none;
 }
 
 // Utility
@@ -69,12 +75,8 @@ a {
 .text-light-color {
   color: $light-grey-text;
 }
-
-.company-logo {
-  max-width: 120px;
-  max-height: 64px;
-  width: auto;
-  height: auto;
+.text-primary-color {
+  color: $primary-color;
 }
 
 // navbar
@@ -83,22 +85,28 @@ nav {
   background: #fff;
   position: sticky;
   top: 0px;
+  z-index: 1;
 
   .container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
 
-    .nav-logo-container {
+    #nav-logo-container {
       display: flex;
       align-items: baseline;
 
       h3 {
         padding-right: 1rem;
       }
+    }
 
-      span {
-        font-size: 12px;
+    #nav-menu-container {
+      display: flex;
+
+      li {
+        padding: 0 1rem;
       }
     }
   }
@@ -107,20 +115,27 @@ nav {
 // header
 header {
   height: calc(100vh - 50px);
+  position: relative;
 
-  .container {
-    display: flex;
+  & > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 150px;
+    height: 100%;
 
     .intro-text-container {
-      margin-top: 200px;
+      margin-top: 250px;
       padding-right: 2rem;
+
+      .text-primary-color {
+        font-weight: 500;
+      }
 
       h1 {
         font-size: 3rem;
       }
 
-      p {
-        font-weight: 500;
+      #intro-description {
         font-size: 16px;
         margin-top: 30px;
         color: $dark-grey-text;
@@ -135,20 +150,50 @@ header {
       width: 400px;
       height: auto;
     }
-  }
 
-  .logo-container {
-    margin-top: 75px;
-    & > * {
-      margin: 0 1rem;
-      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-      filter: grayscale(100%);
-      transition: all 0.35s ease 0s;
+    .logo-container {
+      grid-column: 1 / span 2;
+      display: flex;
 
-      &:hover {
-        -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(0%);
+      .company-logo {
+        display: inline-block;
+        max-width: 120px;
+        max-height: 64px;
+        object-fit: scale-down;
+        margin: 0 1rem;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        transition: all 0.35s ease 0s;
+
+        &:hover {
+          -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+          filter: grayscale(0%);
+        }
       }
     }
   }
+}
+
+#about {
+  height: 100vh;
+  background: blue;
+}
+
+#work {
+  height: 100vh;
+  background: red;
+}
+
+#contact {
+  height: 100vh;
+  background: grey;
+}
+
+footer {
+  height: 50px;
+  background-color: black;
+  color: $light-grey-text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
