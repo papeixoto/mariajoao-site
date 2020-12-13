@@ -15,6 +15,10 @@ body {
   font-weight: 500;
 }
 
+h2 {
+  font-size: 3rem;
+}
+
 h3 {
   font-size: 20px;
 }
@@ -124,7 +128,7 @@ header {
     height: 100%;
 
     .intro-text-container {
-      margin-top: 250px;
+      margin-top: 200px;
       padding-right: 2rem;
 
       .text-primary-color {
@@ -148,7 +152,7 @@ header {
 
     .intro-img {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
     }
 
@@ -249,7 +253,38 @@ header {
 
 #about {
   height: 100vh;
-  background: url("../img/mj_portrait.jpg");
+  background: #c4ac8c;
+
+  .container {
+    display: flex;
+    height: 100%;
+
+    > * {
+      width: 50%;
+    }
+
+    .illustration-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 1rem;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .about-text-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 1rem;
+
+      h2 {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
 }
 
 #education {
